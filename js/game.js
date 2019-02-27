@@ -6,7 +6,7 @@ var game = {
     levels: {
 // music: "98_Lost_Mine.mp3",
         start: {
-            message: "You wake up in a cave, the tunnel ahead splits",
+            message: "You wake up in a cave, the tunnel ahead splits.",
             choices: [
                 {
                     text: "Go left",
@@ -36,7 +36,7 @@ var game = {
             ]
         },
         cliff: {
-            message: "In the dark you wander off a cliff and die",
+            message: "In the dark you wander off a cliff and fall to your death.",
             choices: [
                 {
                     text: "Start over",
@@ -54,7 +54,7 @@ var game = {
             ]
         },
          split: {
-            message: "The path continues to the left, there is a hole in the wall to your right and cliff infront of you",
+            message: "The path continues to the left, there is a hole in the wall to your right and cliff infront of you.",
             choices: [
                 {
                     text: "GO left",
@@ -84,7 +84,7 @@ var game = {
             ]
         },
          rightDoor: {
-            message: "The cave splits again",
+            message: "The cave splits again.",
             choices: [
                 {
                     text: "Go left",
@@ -142,7 +142,7 @@ var game = {
             ]
         },
         restart: {
-            message: "You find the way back to where you started",
+            message: "You find the way back to where you started.",
             choices: [
                 {
                     text: "Go right",
@@ -168,7 +168,7 @@ var game = {
             ]
         },
         cavern: {
-            message: "You enter a cavern, in the center there is a dragon!",
+            message: "You enter a cavern, in the center you see a dragon!",
             choices: [
                 {
                     text: "Fight",
@@ -181,7 +181,7 @@ var game = {
             ]
         },
         preCavern: {
-            message: "You see something ahead moving and the tunnel is widening",
+            message: "The tunnel is growing wider. Looking ahead you see something moving.",
             choices: [
                 {
                     text: "Continue ahead",
@@ -194,7 +194,7 @@ var game = {
             ]
         },
         stuck: {
-            message: "You start heading back but quikly get stuck. Unable to move, you die",
+            message: "You start heading back but quickly get stuck. Unable to move, you die",
             choices: [
                 {
                     text: "Start over",
@@ -203,7 +203,7 @@ var game = {
             ]
         },
         death1: {
-            message: "Fun Fact #17: Dragons are faster than people",
+            message: "Fun Fact #17: Dragons, which are capable of moving at speeds of greater than 200mph, are faster than people",
             choices: [
                 {
                     text: "Start over",
@@ -212,7 +212,7 @@ var game = {
             ]
         },
         fight2: {
-            message: "As you charge toward it the dragon notices you.",
+            message: "As you charge forward the dragon notices you.",
             choices: [
                 {
                     text: "Duck",
@@ -229,6 +229,73 @@ var game = {
             choices: [
                 {
                     text: "Start Over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        fight3: {
+            message: "Just as you duck the dragon spews fire where your head just was.",
+            choices: [
+                {
+                    text: "Continue to evade",
+                    nextLevel: "fight4",
+                },
+                {
+                    text: "Punch Dragon",
+                    nextLevel: "death3",
+                },
+            ]
+        },
+        death3: {
+            message: "The dragon crushes you. What was your plan?",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        fight4: {
+            message: "After dodging the dragon for hours, it collapses, behind it you see a sliver of sunlight.",
+            choices: [
+                {
+                    text: "Approach Light",
+                    nextLevel: "exit1",
+                },
+            ]
+        },
+        death3: {
+            message: "The dragon crushes you. What was your plan?",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        exit1: {
+            message: "You leave the cave.",
+            choices: [
+                {
+                    text: "Celebrate",
+                    nextLevel: "exit2",
+                },
+            ]
+        },
+        exit2: {
+            message: "As you celebrate you are unaware of you surroundings, you accidentally fall into a hole. . .",
+            choices: [
+                {
+                    text: "Oh no",
+                    nextLevel: "exit3",
+                },
+            ]
+        },
+        exit3: {
+            message: ". . . the fall knocks you unconscious.",
+            choices: [
+                {
+                    text: "Not again",
                     nextLevel: "start3",
                 },
             ]
