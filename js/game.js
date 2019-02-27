@@ -6,17 +6,18 @@ var game = {
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You wake up in a cave, the tunnel ahead splits",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Go left",
+                    nextLevel: "split",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "Go right",
+                    nextLevel: "cliff",
                 },
+
             ]
         },
 
@@ -38,6 +39,33 @@ var game = {
                 {
                     text: "Start over",
                     nextLevel: "start",
+                },
+            ]
+        },
+        cliff: {
+            message: "In the dark you wander off a cliff and die",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start",
+                },
+            ]
+        },
+        cliff2: {
+            message: "What did you think would happen?",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start",
+                },
+            ]
+        },
+         split: {
+            message: "The path continues to the lft, there is a hole in the wall to your right and cliff infont of you",
+            choices: [
+                {
+                    text: "Go left",
+                    nextLevel: "cliff2",
                 },
             ]
         },
