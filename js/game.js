@@ -1,10 +1,10 @@
 // NOTE - You must have a level with the name "start".  This is used as the first level in the game.
-
+var key = 0;
 var game = {
     music: "98_Lost_Mine.mp3",
     background_image: "intro-bg.jpg",
     levels: {
-
+// music: "98_Lost_Mine.mp3",
         start: {
             message: "You wake up in a cave, the tunnel ahead splits",
             choices: [
@@ -20,16 +20,19 @@ var game = {
 
             ]
         },
-
-        cave: {
-            background_image: "fire.gif",
-            music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+        start3: {
+            message: "You wake up in a cave, the tunnel ahead splits. You get a strong sense of Deja Vu. . .",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text: "Go left",
+                    nextLevel: "split",
                 },
+
+                {
+                    text: "Go right",
+                    nextLevel: "cliff",
+                },
+
             ]
         },
         cliff: {
@@ -37,7 +40,7 @@ var game = {
             choices: [
                 {
                     text: "Start over",
-                    nextLevel: "start",
+                    nextLevel: "start3",
                 },
             ]
         },
@@ -46,7 +49,7 @@ var game = {
             choices: [
                 {
                     text: "Start over",
-                    nextLevel: "start",
+                    nextLevel: "start3",
                 },
             ]
         },
@@ -63,7 +66,7 @@ var game = {
                 },
                 {
                     text: "GO right",
-                    nextLevel: "cliff2",
+                    nextLevel: "path",
                 },
             ]
         },
@@ -125,23 +128,110 @@ var game = {
             ]
         },
         key: {
-            message: "You find a key on the ground.",
+            message: "You enter a long narrow tunnel.",
             choices: [
                 {
-                    text: "Pick it up",
-                    nextLevel: "restart",
+                    text: "Squeze Through",
+                    nextLevel: "preCavern",
                 },
+                {
+                    text: "Give Up",
+                    nextLevel: "start3",
+                },
+                
             ]
         },
         restart: {
             message: "You find the way back to where you started",
             choices: [
                 {
-                    text: "Pick it up",
-                    nextLevel: "restart",
+                    text: "Go right",
+                    nextLevel: "cliff",
+                },
+                {
+                    text: "Go left",
+                    nextLevel: "split",
                 },
             ]
         },
-
+        path: {
+            message: "The cave continues ahead, but you hear sounds coming from an adjacent cave.",
+            choices: [
+                {
+                    text: "Continue ahead",
+                    nextLevel: "doorKey",
+                },
+                {
+                    text: "Investigate the sound",
+                    nextLevel: "cavern",
+                },
+            ]
+        },
+        cavern: {
+            message: "You enter a cavern, in the center there is a dragon!",
+            choices: [
+                {
+                    text: "Fight",
+                    nextLevel: "fight2",
+                },
+                {
+                    text: "Escape",
+                    nextLevel: "death1",
+                },
+            ]
+        },
+        preCavern: {
+            message: "You see something ahead moving and the tunnel is widening",
+            choices: [
+                {
+                    text: "Continue ahead",
+                    nextLevel: "cavern",
+                },
+                {
+                    text: "Go back",
+                    nextLevel: "stuck",
+                },
+            ]
+        },
+        stuck: {
+            message: "You start heading back but quikly get stuck. Unable to move, you die",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        death1: {
+            message: "Fun Fact #17: Dragons are faster than people",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        fight2: {
+            message: "As you charge toward it the dragon notices you.",
+            choices: [
+                {
+                    text: "Duck",
+                    nextLevel: "fight3",
+                },
+                {
+                    text: "Continue Charging",
+                    nextLevel: "death2",
+                },
+            ]
+        },
+        death2: {
+            message: "The dragon quickly ends your advance with a jet of flames",
+            choices: [
+                {
+                    text: "Start Over",
+                    nextLevel: "start3",
+                },
+            ]
+        },
     }
 };
