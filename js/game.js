@@ -101,7 +101,7 @@ var game = {
             choices: [
                 {
                     text: "Jump",
-                    nextLevel: "start2",
+                    nextLevel: "jump",
                 },
                 {
                     text: "Turn back",
@@ -109,12 +109,12 @@ var game = {
                 },
             ]
         },
-        Jump: {
+        jump: {
             message: "After falling throught the hole you hit the cave floor below. The fall knocks you out.",
             choices: [
                 {
                     text: "Wake up",
-                    nextLevel: "start",
+                    nextLevel: "start3",
                 },
             ]
         },
@@ -144,14 +144,15 @@ var game = {
         restart: {
             message: "You find the way back to where you started.",
             choices: [
+                 {
+                    text: "Go left",
+                    nextLevel: "split",
+                },
                 {
                     text: "Go right",
                     nextLevel: "cliff",
                 },
-                {
-                    text: "Go left",
-                    nextLevel: "split",
-                },
+               
             ]
         },
         path: {
@@ -171,13 +172,14 @@ var game = {
             message: "You enter a cavern, in the center you see a dragon!",
             choices: [
                 {
-                    text: "Fight",
-                    nextLevel: "fight2",
-                },
-                {
                     text: "Escape",
                     nextLevel: "death1",
                 },
+                {
+                    text: "Fight",
+                    nextLevel: "fight2",
+                },
+                
             ]
         },
         preCavern: {
@@ -236,13 +238,13 @@ var game = {
         fight3: {
             message: "Just as you duck the dragon spews fire where your head just was.",
             choices: [
+                 {
+                    text: "Punch Dragon",
+                    nextLevel: "death3",
+                },
                 {
                     text: "Continue to evade",
                     nextLevel: "fight4",
-                },
-                {
-                    text: "Punch Dragon",
-                    nextLevel: "death3",
                 },
             ]
         },
@@ -295,10 +297,20 @@ var game = {
             message: ". . . the fall knocks you unconscious.",
             choices: [
                 {
-                    text: "Not again",
+                    text: "Wake up",
+                    nextLevel: "start3",
+                },
+            ]
+        },
+        doorKey: {
+            message: "The cave collapses, crushing you.",
+            choices: [
+                {
+                    text: "Start over",
                     nextLevel: "start3",
                 },
             ]
         },
     }
 };
+ //LLRRLLRLR or LR
