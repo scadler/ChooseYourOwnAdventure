@@ -32,16 +32,6 @@ var game = {
                 },
             ]
         },
-
-        field: {
-            message: "Some adventurer you are...",
-            choices: [
-                {
-                    text: "Start over",
-                    nextLevel: "start",
-                },
-            ]
-        },
         cliff: {
             message: "In the dark you wander off a cliff and die",
             choices: [
@@ -61,11 +51,94 @@ var game = {
             ]
         },
          split: {
-            message: "The path continues to the lft, there is a hole in the wall to your right and cliff infont of you",
+            message: "The path continues to the left, there is a hole in the wall to your right and cliff infront of you",
+            choices: [
+                {
+                    text: "GO left",
+                    nextLevel: "doors",
+                },
+                {
+                    text: "GO straight",
+                    nextLevel: "cliff2",
+                },
+                {
+                    text: "GO right",
+                    nextLevel: "cliff2",
+                },
+            ]
+        },
+        doors: {
+            message: "The cave grows into a cavern. Two massive doors appear on your left and right. Which door do you enter?",
+            choices: [
+                {
+                    text: "Left door",
+                    nextLevel: "leftDoor",
+                },
+                {
+                    text: "Right door",
+                    nextLevel: "rightDoor",
+                },
+            ]
+        },
+         rightDoor: {
+            message: "The cave splits again",
             choices: [
                 {
                     text: "Go left",
-                    nextLevel: "cliff2",
+                    nextLevel: "deadEnd",
+                },
+                {
+                    text: "Go right",
+                    nextLevel: "key",
+                },
+            ]
+        },
+        leftDoor: {
+            message: "A hole in the ground blocks your path, do your try to jump over it?",
+            choices: [
+                {
+                    text: "Jump",
+                    nextLevel: "start2",
+                },
+                {
+                    text: "Turn back",
+                    nextLevel: "doors",
+                },
+            ]
+        },
+        Jump: {
+            message: "After falling throught the hole you hit the cave floor below. The fall knocks you out.",
+            choices: [
+                {
+                    text: "Wake up",
+                    nextLevel: "start",
+                },
+            ]
+        },
+        deadEnd: {
+            message: "It is a dead end.",
+            choices: [
+                {
+                    text: "Turn around",
+                    nextLevel: "rightDoor",
+                },
+            ]
+        },
+        key: {
+            message: "You find a key on the ground.",
+            choices: [
+                {
+                    text: "Pick it up",
+                    nextLevel: "restart",
+                },
+            ]
+        },
+        restart: {
+            message: "You find the way back to where you started",
+            choices: [
+                {
+                    text: "Pick it up",
+                    nextLevel: "restart",
                 },
             ]
         },
